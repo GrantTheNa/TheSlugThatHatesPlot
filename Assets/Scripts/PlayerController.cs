@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -128,6 +129,7 @@ public class PlayerController : MonoBehaviour
                         livesTest.text = lives.ToString();
                         DeathScript();
                         Debug.Log("Game Over");
+                        SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
                     }
                 }
             }

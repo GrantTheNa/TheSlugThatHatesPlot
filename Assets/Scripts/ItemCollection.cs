@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 public class ItemCollection : MonoBehaviour
 {
+
     private float tomato = 0;
     private float leaf = 0;
     private float key = 0;
@@ -22,6 +23,7 @@ public class ItemCollection : MonoBehaviour
         textLeaf.text = leaf.ToString();
         textKey.text = key.ToString();
         textScore.text = score.ToString();
+
     }
 
 
