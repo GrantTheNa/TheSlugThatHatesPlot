@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
 
     //Lives & Health
-    private int lives = 3;
+    private int lives = 10;
     public Text livesTest;
     private bool isDead = false;
     public LayerMask deathMask;
@@ -77,9 +77,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lives = 3;
+        lives = 10;
         Cursor.lockState = CursorLockMode.Locked;
-        livesTest.text = "3";
+        livesTest.text = lives.ToString();
         controls = true;
 
     }
@@ -109,6 +109,7 @@ public class PlayerController : MonoBehaviour
 
             if (canDie == true)
             {
+
                 if (isDead == true)
                 {
                     controls = false;
@@ -116,20 +117,17 @@ public class PlayerController : MonoBehaviour
                     isDead = false;
                     transform.position = checkPointSpawner.transform.position;
                     lives = lives - 1;
-                    if (lives == 2)
+                    if (lives > 0)
                     {
-                        livesTest.text = "2";
+                        livesTest.text = lives.ToString();
                         DeathScript();
                     }
-                    else if (lives == 1)
-                    {
-                        livesTest.text = "1";
-                        DeathScript();
-                    }
+
                     else
                     {
-                        livesTest.text = "0";
+                        livesTest.text = lives.ToString();
                         DeathScript();
+                        Debug.Log("Game Over");
                     }
                 }
             }
@@ -335,10 +333,10 @@ public class PlayerController : MonoBehaviour
 
 
 
-    void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-            Debug.DrawRay(hit.point, hit.normal, Color.red, 3f);
-    }
+    //void OnControllerColliderHit(ControllerColliderHit hit)
+    //{
+    //        Debug.DrawRay(hit.point, hit.normal, Color.red, 3f);
+    //}
 
 
 

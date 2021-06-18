@@ -5,10 +5,15 @@ public class ItemCollection : MonoBehaviour
     private float tomato = 0;
     private float leaf = 0;
     private float key = 0;
+    private float score = 0;
+
+    private float tomatoWorth = 100;
+    private float leafWorth = 10;
 
     public Text textTomato;
     public Text textLeaf;
     public Text textKey;
+    public Text textScore;
     public bool allKeysCollected;
 
     void Start()
@@ -16,6 +21,7 @@ public class ItemCollection : MonoBehaviour
         textTomato.text = tomato.ToString();
         textLeaf.text = leaf.ToString();
         textKey.text = key.ToString();
+        textScore.text = score.ToString();
     }
 
 
@@ -24,14 +30,19 @@ public class ItemCollection : MonoBehaviour
         if (other.gameObject.CompareTag("Tomato"))
         {
             tomato++;
+            score += tomatoWorth;
 
             textTomato.text = tomato.ToString();
+            textScore.text = score.ToString();
             Destroy(other.gameObject);
         }
         else if (other.gameObject.CompareTag("Leaf"))
         {
             leaf ++;
+            score += leafWorth;
+
             textLeaf.text = leaf.ToString();
+            textScore.text = score.ToString();
 
             Destroy(other.gameObject);
         }
