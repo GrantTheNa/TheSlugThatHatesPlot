@@ -18,6 +18,7 @@ public class ItemCollection : MonoBehaviour
     public bool allKeysCollected;
     public bool htpMenu;
     public GameObject menu;
+    public GameObject door;
 
     void Start()
     {
@@ -35,16 +36,16 @@ public class ItemCollection : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (htpMenu == true)
+            if (htpMenu == false)
             {
                 menu.SetActive(true);
-                htpMenu = false;
+                htpMenu = true;
 
             }
-            else if (htpMenu == false)
+            else if (htpMenu == true)
             {
                 menu.SetActive(false);
-                htpMenu = true;
+                htpMenu = false;
             }
         }
     }
@@ -80,6 +81,7 @@ public class ItemCollection : MonoBehaviour
             {
                 allKeysCollected = true;
                 Debug.Log("All Keys have been collected");
+                Destroy(door);
             }
 
         }

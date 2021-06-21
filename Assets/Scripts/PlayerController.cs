@@ -315,7 +315,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(DeathScriptWait());
     }
 
-    IEnumerator DeathScriptWait()
+    IEnumerator DeathScriptWait() //A little delay so collision glitches don't happen and more lives get taken off then needed
     {
         yield return new WaitForSeconds(0.05f);
         transform.position = checkPointSpawner.transform.position;
@@ -324,7 +324,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    void DeathEnd()
+    void DeathEnd() //Resetting to Normal Controls after death and respawning
     {
         Debug.Log("new life");
         speed = normalSpeed;
