@@ -16,6 +16,8 @@ public class ItemCollection : MonoBehaviour
     public Text textKey;
     public Text textScore;
     public bool allKeysCollected;
+    public bool htpMenu;
+    public GameObject menu;
 
     void Start()
     {
@@ -23,9 +25,29 @@ public class ItemCollection : MonoBehaviour
         textLeaf.text = leaf.ToString();
         textKey.text = key.ToString();
         textScore.text = score.ToString();
+        htpMenu = true;
 
     }
 
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (htpMenu == true)
+            {
+                menu.SetActive(true);
+                htpMenu = false;
+
+            }
+            else if (htpMenu == false)
+            {
+                menu.SetActive(false);
+                htpMenu = true;
+            }
+        }
+    }
 
     public void OnTriggerEnter(Collider other)
     {
