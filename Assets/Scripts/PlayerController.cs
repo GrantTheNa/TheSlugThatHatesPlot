@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public Animator animator2;
     private bool controls;
+    private bool startGame;
 
 
 
@@ -81,13 +82,23 @@ public class PlayerController : MonoBehaviour
         lives = 10;
         Cursor.lockState = CursorLockMode.Locked;
         livesTest.text = lives.ToString();
-        controls = true;
+        controls = false;
+        startGame = true;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (startGame == true && controls == false)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                controls = true;
+            }
+        }
+
         if (controls == true)
         {
 
