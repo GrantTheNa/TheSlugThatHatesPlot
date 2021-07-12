@@ -168,25 +168,45 @@ public class ItemCollection : MonoBehaviour
             endGameMenuReload = true;
             endGameMenu.SetActive(true);
             isOnEndGameMenu = true;
-            if (timeMinute == 1 && timeSeconds <= 40)
+            if (timeMinute == 3 && timeSeconds <= 10)
             {
                 endGameCredit = 50;
             }
-            else if (timeMinute == 1 && timeSeconds <= 30)
-            {
-                endGameCredit = 100;
-            }
-            else if (timeMinute == 1 && timeSeconds == 20)
+            else if (timeMinute == 2 && timeSeconds >= 50)
             {
                 endGameCredit = 200;
             }
-            else if (timeMinute == 1 && timeSeconds == 10)
+            else if (timeMinute == 2 && timeSeconds >= 10)
             {
-                endGameCredit = 250;
+                endGameCredit = 500;
+            }
+            else if (timeMinute == 2 && timeSeconds <= 10)
+            {
+                endGameCredit = 700;
+            }
+            else if (timeMinute == 1 && timeSeconds >= 50)
+            {
+                endGameCredit = 800;
+            }
+            else if (timeMinute == 1 && timeSeconds >= 40)
+            {
+                endGameCredit = 900;
+            }
+            else if (timeMinute == 1 && timeSeconds >= 30)
+            {
+                endGameCredit = 1000;
+            }
+            else if (timeMinute == 1 && timeSeconds >= 10)
+            {
+                endGameCredit = 1100;
+            }
+            else if (timeMinute == 1 && timeSeconds <= 10)
+            {
+                endGameCredit = 1200;
             }
             else if (timeMinute == 0)
             {
-                endGameCredit = 300;
+                endGameCredit = 1300;
             }
             Debug.Log("end");
             endGameMenu.SetActive(true);

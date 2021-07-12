@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
 
     //"Sprint also meaning Dash controls
-    public static float normalSpeed = 8f;
+    public static float normalSpeed = 8.2f;
     private float speed = normalSpeed;
     private float sprintMultiplier = 2.45f;
     private bool sprintBool = false;
