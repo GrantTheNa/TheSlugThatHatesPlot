@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
 
     //"Sprint also meaning Dash controls
-    public static float normalSpeed = 8.2f;
+    public static float normalSpeed = 8.5f;
     private float speed = normalSpeed;
     private float sprintMultiplier = 2.45f;
     private bool sprintBool = false;
@@ -124,6 +124,7 @@ public class PlayerController : MonoBehaviour
 
                 if (isDead == true)
                 {
+                    SoundManager.PlaySound(SoundManager.Sound.PlayerDie);
                     controls = false;
                     canDie = false;
                     isDead = false;

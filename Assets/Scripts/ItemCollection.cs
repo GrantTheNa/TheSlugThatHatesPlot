@@ -200,9 +200,13 @@ public class ItemCollection : MonoBehaviour
             {
                 endGameCredit = 1100;
             }
-            else if (timeMinute == 1 && timeSeconds <= 10)
+            else if (timeMinute == 1 && timeSeconds >= 5)
             {
                 endGameCredit = 1200;
+            }
+            else if (timeMinute == 1 && timeSeconds <= 5)
+            {
+                endGameCredit = 1250;
             }
             else if (timeMinute == 0)
             {
