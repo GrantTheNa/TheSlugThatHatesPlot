@@ -60,12 +60,12 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 0682bcad1964b1d4aa3924f905d18bae, type: 3}
   - sound: 0
     audioClip: {fileID: 8300000, guid: c95b209e3e9cf4049838ecb824fe9a48, type: 3}
-  - sound: 4
-    audioClip: {fileID: 8300000, guid: 3b73e7cd734472341beb8c78d5680f83, type: 3}
-  - sound: 4
-    audioClip: {fileID: 8300000, guid: 3b73e7cd734472341beb8c78d5680f83, type: 3}
-  - sound: 4
-    audioClip: {fileID: 8300000, guid: 3b73e7cd734472341beb8c78d5680f83, type: 3}
+  - sound: 10
+    audioClip: {fileID: 8300000, guid: 0a1267996a2e6c7429a746b5fb52433a, type: 3}
+  - sound: 12
+    audioClip: {fileID: 8300000, guid: 80ef009898f26b549b129751e323bdf1, type: 3}
+  - sound: 13
+    audioClip: {fileID: 8300000, guid: d95dffaa7d64cde4f8bb3ad2b53c0dd2, type: 3}
   - sound: 4
     audioClip: {fileID: 8300000, guid: 3b73e7cd734472341beb8c78d5680f83, type: 3}
   - sound: 4

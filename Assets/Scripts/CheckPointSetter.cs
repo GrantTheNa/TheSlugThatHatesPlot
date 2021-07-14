@@ -15,5 +15,6 @@ public class CheckPointSetter : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         currentCheckpoint.transform.position = spawnSetter.transform.position;
+        SoundManager.PlaySound(SoundManager.Sound.CheckpointSetter_Interaction);
     }
 }
