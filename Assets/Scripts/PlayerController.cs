@@ -75,6 +75,9 @@ public class PlayerController : MonoBehaviour
     //Speed on how fast the jump physics will fall
     public float gravityController = 10;
 
+    //sound check
+    bool soundPlaying = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -85,6 +88,17 @@ public class PlayerController : MonoBehaviour
         controls = false;
         startGame = true;
 
+    }
+
+    private void Awake()
+    {
+        SoundManager.Initialize();
+    }
+    
+    //Getting the Player's Position
+    public Vector3 GetPosition()
+    {
+        return transform.position;
     }
 
     // Update is called once per frame
@@ -124,7 +138,29 @@ public class PlayerController : MonoBehaviour
 
                 if (isDead == true)
                 {
-                    SoundManager.PlaySound(SoundManager.Sound.PlayerDie);
+                    //what sound plays
+                    if (Random.value > 0.75 && soundPlaying == false)
+                    { 
+                        SoundManager.PlaySound(SoundManager.Sound.PlayerDie);
+                        soundPlaying = true;
+                    }
+                    else if (Random.value > 0.50 && soundPlaying == false)
+                    {
+                        SoundManager.PlaySound(SoundManager.Sound.PlayerDie2);
+                        soundPlaying = true;
+                    }
+                    else if (Random.value < 0.50 && soundPlaying == false)
+                    {
+                        SoundManager.PlaySound(SoundManager.Sound.PlayerDie3);
+                        soundPlaying = true;
+                    }
+                    if (soundPlaying == false)
+                    {
+                        SoundManager.PlaySound(SoundManager.Sound.PlayerDie4);
+                    }
+
+
+
                     controls = false;
                     canDie = false;
                     isDead = false;
@@ -283,6 +319,7 @@ public class PlayerController : MonoBehaviour
     {
         if (canWallJump == true)
         {
+            SoundManager.PlaySound(SoundManager.Sound.PlayerInflate);
             canWallJump = false;
             velocity.y = 0f;
             wallStuckMode = true;
@@ -343,6 +380,7 @@ public class PlayerController : MonoBehaviour
         canDie = true;
         isDead = false;
         controls = true;
+        soundPlaying = false;
     }
 
 
