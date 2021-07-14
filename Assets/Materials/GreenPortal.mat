@@ -82,7 +82,7 @@ Material:
     - _outline_tint: 0.5
     - _outline_width: -3
     m_Colors:
-    - _Color: {r: 0.14967573, g: 1, b: 0.09803921, a: 1}
+    - _Color: {r: 0, g: 1, b: 0.16732669, a: 1}
     - _EmissionColor: {r: 0.0682806, g: 0.0754717, b: 0.06799573, a: 1}
     - _outline_color: {r: 1, g: 0.7971698, b: 0.7971698, a: 1}
   m_BuildTextureStacks: []
