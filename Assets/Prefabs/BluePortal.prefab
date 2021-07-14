@@ -1,6 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< Updated upstream
 --- !u!1 &7523164540611644347
+=======
+--- !u!1 &1062522906663858877
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,35 +12,57 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 8576002823681266641}
   - component: {fileID: 4594935118579817589}
   m_Layer: 0
+=======
+  - component: {fileID: 2325964806829706195}
+  - component: {fileID: 8022167358157839928}
+  m_Layer: 9
+>>>>>>> Stashed changes
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!4 &8576002823681266641
+=======
+--- !u!4 &2325964806829706195
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 7523164540611644347}
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0.013833366, y: 0.002000014, z: 0.03802856}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+=======
+  m_GameObject: {fileID: 1062522906663858877}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+>>>>>>> Stashed changes
   m_Children: []
   m_Father: {fileID: 8711405784916152793}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!82 &4594935118579817589
+=======
+--- !u!82 &8022167358157839928
+>>>>>>> Stashed changes
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 7523164540611644347}
   m_Enabled: 1
   serializedVersion: 4
@@ -46,15 +72,34 @@ AudioSource:
   m_Volume: 0.087
   m_Pitch: 1
   Loop: 1
+=======
+  m_GameObject: {fileID: 1062522906663858877}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+>>>>>>> Stashed changes
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
+<<<<<<< Updated upstream
   DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 50
   Pan2D: 0
   rolloffMode: 1
+=======
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+>>>>>>> Stashed changes
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -87,7 +132,11 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
+<<<<<<< Updated upstream
       value: 1
+=======
+      value: 0
+>>>>>>> Stashed changes
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -212,7 +261,11 @@ Transform:
   - {fileID: 8711405785595863004}
   - {fileID: 8711405786316942820}
   - {fileID: 8711405786522744504}
+<<<<<<< Updated upstream
   - {fileID: 8576002823681266641}
+=======
+  - {fileID: 2325964806829706195}
+>>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

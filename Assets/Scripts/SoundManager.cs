@@ -27,6 +27,7 @@ public static class SoundManager
         PlayerDash,
         PlayerFall,
         DeathSlice,
+        Portal,
     }
 
     private static Dictionary<Sound, float> soundTimerDictionary;
