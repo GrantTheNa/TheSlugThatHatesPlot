@@ -131,7 +131,7 @@ public class ItemCollection : MonoBehaviour
             {
                 leaf ++;
                 score += leafWorth;
-
+                SoundManager.PlaySound(SoundManager.Sound.Leaf_PickUp);
                 textLeaf.text = leaf.ToString();
                 textScore.text = score.ToString();
     
