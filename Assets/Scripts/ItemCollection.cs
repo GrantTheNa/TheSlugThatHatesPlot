@@ -68,6 +68,7 @@ public class ItemCollection : MonoBehaviour
             timeBool = true;
             if (htpMenu == false)
             {
+                SoundManager.PlaySound(SoundManager.Sound.Canvas_Selection);
                 menu.SetActive(true);
                 htpMenu = true;
 
@@ -76,6 +77,7 @@ public class ItemCollection : MonoBehaviour
             {
                 menu.SetActive(false);
                 htpMenu = false;
+                SoundManager.PlaySound(SoundManager.Sound.Canvas_Selection);
             }
         }
 
@@ -122,8 +124,8 @@ public class ItemCollection : MonoBehaviour
             {
                 tomato++;
                score += tomatoWorth;
-
-               textTomato.text = tomato.ToString();
+                SoundManager.PlaySound(SoundManager.Sound.Tomato_PickUp);
+                textTomato.text = tomato.ToString();
                textScore.text = score.ToString();
               Destroy(other.gameObject);
             }
@@ -141,7 +143,7 @@ public class ItemCollection : MonoBehaviour
             {
                 key ++;
                 textKey.text = key.ToString();
-
+                SoundManager.PlaySound(SoundManager.Sound.Key_PickUp);
                 Destroy(other.gameObject);
                 if (key == 5)
                 {

@@ -14,5 +14,6 @@ public class ColourPortalScript : MonoBehaviour
 	void OnTriggerEnter(Collider other)
 	{
 		other.GetComponent<Renderer>().material.color = new Color(Red, Green, Blue);
+		SoundManager.PlaySound(SoundManager.Sound.PlayerColourSwitch);
 	}
 }
