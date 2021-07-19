@@ -138,7 +138,9 @@ public class PlayerController : MonoBehaviour
 
                 if (isDead == true)
                 {
+
                     //what sound plays
+                    soundPlaying = false;
                     if (Random.value > 0.75 && soundPlaying == false)
                     { 
                         SoundManager.PlaySound(SoundManager.Sound.PlayerDie);
@@ -199,6 +201,26 @@ public class PlayerController : MonoBehaviour
             }
 
 
+            //SoundManager.PlaySound(SoundManager.Sound.PlayerMove, GetPosition());
+
+            //Walking sound
+            if (Input.GetKey(KeyCode.W) && isGrounded)
+            {
+                SoundManager.PlaySound(SoundManager.Sound.PlayerMove, GetPosition());
+            }
+            if (Input.GetKey(KeyCode.A) && isGrounded)
+            {
+                SoundManager.PlaySound(SoundManager.Sound.PlayerMove, GetPosition());
+            }
+            if (Input.GetKey(KeyCode.S) && isGrounded)
+            {
+                SoundManager.PlaySound(SoundManager.Sound.PlayerMove, GetPosition());
+            }
+            if (Input.GetKey(KeyCode.D) && isGrounded)
+            {
+                SoundManager.PlaySound(SoundManager.Sound.PlayerMove, GetPosition());
+            }
+
 
             //simple dash command check
             Dash();
@@ -239,15 +261,26 @@ public class PlayerController : MonoBehaviour
                 velocity += Vector3.up * gravity * (lowJumpMultiplier - 1) * Time.deltaTime;
             }
 
-            //Reset Velocity on Land
+            //Reset Velocity on Land - Jump 
             if (Input.GetButtonDown("Jump") && isGrounded)
             {
+                soundPlaying = false;
+                if (Random.value > 0.5 && soundPlaying == false)
+                {
+                    SoundManager.PlaySound(SoundManager.Sound.PlayerJump);
+                    soundPlaying = true;
+                }
+                else if (soundPlaying == false)
+                {
+                    SoundManager.PlaySound(SoundManager.Sound.PlayerJump2);
+                    soundPlaying = true;
+                }
                 velocity.y = Mathf.Sqrt(jumpVelocity * -2f * gravity);
                 canSprint = true;
                 wallStuckMode = false;
                 canWallJump = true;
-            }
 
+            }
             //Reset Velocity on Land
             if (Input.GetButtonDown("Jump") && onWall && wallStuckMode == true)
             {
@@ -255,6 +288,7 @@ public class PlayerController : MonoBehaviour
                 wallStuckMode = false;
                 canWallJump = false;
                 NotifyEndWall();
+                SoundManager.PlaySound(SoundManager.Sound.PlayerDeflate);
                 Debug.Log("WallJump");
                 velocity.y = Mathf.Sqrt(jumpVelocity * -2f * gravity);
 

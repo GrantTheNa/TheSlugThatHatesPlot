@@ -149,7 +149,8 @@ public class ItemCollection : MonoBehaviour
                 {
                     allKeysCollected = true;
                     Debug.Log("All Keys have been collected");
-                   Destroy(door);
+                    SoundManager.PlaySound(SoundManager.Sound.Door_EventOpen);
+                    Destroy(door);
                 }
         
             }

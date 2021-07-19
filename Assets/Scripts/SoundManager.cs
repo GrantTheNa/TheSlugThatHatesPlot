@@ -28,6 +28,7 @@ public static class SoundManager
         PlayerFall,
         DeathSlice,
         Portal,
+        PlayerJump2,
     }
 
     private static Dictionary<Sound, float> soundTimerDictionary;
@@ -35,14 +36,13 @@ public static class SoundManager
     public static void Initialize()
     {
         soundTimerDictionary = new Dictionary<Sound, float>();
-        //soundTimerDictionary[Sound.PlayerMove] = 0f;
-        soundTimerDictionary[Sound.Key] = 0f;
+        soundTimerDictionary[Sound.PlayerMove] = 0f;
     }
     
     //3D sound
     public static void PlaySound(Sound sound, Vector3 position)
     {
-        if (CanPlaySound(sound))
+        if (CanPlaySound(sound) == true)
         {
             GameObject soundGameObject = new GameObject("Sound");
             soundGameObject.transform.position = position;
@@ -52,13 +52,14 @@ public static class SoundManager
             audioSource.spatialBlend = 1f;
             audioSource.rolloffMode = AudioRolloffMode.Linear;
             audioSource.dopplerLevel = 0f;
+            audioSource.volume = 0.25f;
             audioSource.Play();
         }
     }
     
     public static void PlaySound(Sound sound)
     {
-        if (CanPlaySound(sound))
+        if (CanPlaySound(sound) == true)
         {
             GameObject soundGameObject = new GameObject("Sound");
             AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
@@ -72,12 +73,12 @@ public static class SoundManager
         {
             default:
                 return true;
-            case Sound.Key:
+            case Sound.PlayerMove:
                 if (soundTimerDictionary.ContainsKey(sound))
                 {
                     float lastTimePlayed = soundTimerDictionary[sound];
-                    float keyTimerMax = 0f;
-                    if (lastTimePlayed + keyTimerMax < Time.time)
+                    float playerMoveTimerMax = 1.275f;
+                    if (lastTimePlayed + playerMoveTimerMax < Time.time)
                     {
                         //soundTimerDictionary[sound] = Time.captureDeltaTime;
                         soundTimerDictionary[sound] = Time.time;
