@@ -8,6 +8,7 @@ TagManager:
   - Key
   - Tomato
   - End
+  - flag
   layers:
   - Default
   - TransparentFX

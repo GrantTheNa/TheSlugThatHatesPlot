@@ -6,6 +6,9 @@ public class CheckPointSetter : MonoBehaviour
 {
     public Transform currentCheckpoint;
     public Transform spawnSetter;
+    public bool isCurrentCheckpoint;
+
+
 
     void OnTriggerEnter(Collider other)
     {
